@@ -1,0 +1,337 @@
+.menu {
+  position  : absolute;
+  max-height: calc(100vh - 166px);
+  width     : 13rem;
+  overflow-y: scroll;
+
+  // left      : 230px;
+  .subMenu {
+    .subMenuTitle {
+      cursor     : pointer;
+      font-size  : 14px;
+      font-weight: 500;
+      color      : #808080;
+      user-select: none;
+      margin     : 1rem 0;
+
+      &:hover {
+        color: #1890ff;
+        transition: color 600ms ease-in-out,
+      }
+
+    }
+
+    .menuItem {
+      margin       : 8px 0;
+      font-size    : 14px;
+      font-weight  : 400;
+      padding-left : 8px;
+      color        : #808080;
+      border-radius: 4px;
+      cursor       : pointer;
+      user-select  : none;
+
+      &:hover {
+        color: #1890ff;
+        transition: color 400ms ease-in-out,
+      }
+    }
+
+    .active {
+      color: #4c7ee3;
+    }
+  }
+}
+
+
+.graphToolbar {
+  position         : relative;
+  border-bottom    : 1px solid #E6E6FF;
+  margin-bottom    : 1.25rem;
+  // padding-bottom: 0.575rem;
+  display          : flex;
+  // align-items: center;
+  justify-content  : space-between;
+  padding-right    : 10px;
+  padding-left     : 15px;
+
+  .option {
+    height         : 2rem;
+    color          : #7171A6;
+    box-shadow     : 0 0 0 1px #e6e6ff;
+    font-size      : 15px;
+    letter-spacing : -0.006em;
+    font-weight    : 500;
+    margin         : 0 0.75rem 0.75rem 0;
+    border-radius  : 8px;
+    padding        : 0 0.5rem;
+    min-Width      : 7rem;
+    display        : flex;
+    justify-content: space-around;
+    align-items    : center;
+
+  }
+
+  .cascader {
+    margin: 0 0.75rem 0.75rem 0;
+
+    :global(.ant-input) {
+      width        : 8rem;
+      height       : 2rem;
+      box-shadow   : 0 0 0 1px #e6e6ff;
+      border-radius: 8px;
+    }
+
+    //先找他的父级
+    //不会影响到全局，只起定位的作用
+    :global(.ant-cascader-picker-label) {
+      color         : #7171A6;
+      font-weight   : 500;
+      font-size     : 15px;
+      letter-spacing: -0.006em;
+      padding       : 0 0.7rem;
+    }
+
+
+  }
+
+
+
+
+  .active1 {
+    color: red;
+
+    &:before {
+      content         : "";
+      position        : absolute;
+      background-color: #6078FF;
+      width           : 5px;
+      height          : 10px;
+      border-radius   : 0px 10px 10px 0;
+      left            : 0;
+      top             : 50%;
+      transform       : translate(0, -50%);
+    }
+  }
+}
+
+
+.tableToolBar {
+  position          : relative;
+  // border-top     : 1px solid #E6E6FF;
+  // margin-top     : 0.25rem;
+  // padding-top    : 0.575rem;
+  display           : flex;
+  justify-content   : space-between;
+
+
+
+  .option {
+    height         : 2rem;
+    color          : #7171A6;
+    box-shadow     : 0 0 0 1px #e6e6ff;
+    font-size      : 15px;
+    letter-spacing : -0.006em;
+    font-weight    : 500;
+    margin         : 0 0.75rem 0.75rem 0;
+    border-radius  : 8px;
+    padding        : 0 0.5rem;
+    min-Width      : 7rem;
+    display        : flex;
+    justify-content: space-around;
+    align-items    : center;
+  }
+}
+
+
+.customTooltip {
+  :global(.ant-tooltip-inner) {
+    min-width       : 25px !important;
+    font-size       : 12px;
+    font-style      : italic;
+    font-weight     : 550;
+    color           : #7171A6;
+    background-color: #fff;
+    box-shadow      : -1px 2px 8px 1px  rgba(128,128,128,0.31) !important;
+    border-radius   : 8px;
+    padding         : 0.5rem;
+  }
+}
+
+
+.buttons {
+  display        : flex;
+  flex-wrap      : wrap;
+  justify-content: flex-start;
+  align-items    : flex-start;
+}
+
+
+
+.tableChart {
+  width: 100%;
+}
+
+.combTable {
+  width: 100%;
+}
+
+.ChartAndTableUnit {
+  background-color: #fff;
+  border-radius   : 10px;
+  padding         : 16px;
+  margin-bottom   : 0.6vw;
+  margin-left     : 13rem;
+
+  .tableChart {
+    width: 100%;
+  }
+
+  :global(.ant-table-tbody) {
+
+    //global下只能获取一层，不能使用类名，只能选标签
+    tr {
+      &:hover {
+        td:nth-of-type(1) {
+          background-color: #f9f9f9 !important;
+        }
+      }
+    }
+
+    td:nth-of-type(1) {
+      background-color: #f9f9f9;
+      padding         : 0 0 0 10px !important;
+      cursor          : default;
+
+      &:hover {
+        background-color: #f9f9f9;
+      }
+    }
+
+    td {
+      cursor: pointer;
+    }
+
+  }
+
+  :global(.ant-table-thead) {
+
+    //global下只能获取一层，不能使用类名，只能选标签
+    th {
+      cursor: pointer;
+    }
+
+    th:nth-of-type(1) {
+      cursor: default;
+
+    }
+  }
+
+
+
+
+
+
+}
+
+.trendCard {
+  background-color: #fff;
+  margin-left     : 13rem;
+  border-radius   : 10px;
+  padding         : 16px;
+  margin-bottom   : 0.6vw;
+  user-select     : none;
+
+  .header {
+
+    font-size            : 14px;
+    font-weight          : 500;
+    color                : rgb(105, 105, 156);
+    display              : grid;
+    grid-template-columns: 11% 15% 15% 15% 15% 15% 14%;
+
+    .headerItem {
+      display        : flex;
+      justify-content: center;
+    }
+  }
+
+  .items {
+    font-size      : 20px;
+    font-weight    : 500;
+    color          : #000;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-around;
+
+    .itemLayout {
+      display              : grid;
+      grid-template-columns: 11% 15% 15% 15% 15% 15% 14%;
+      margin-bottom        : 10px;
+
+      .item {
+        display       : flex;
+        flex-direction: column;
+        align-items   : center;
+
+        .itemTitle {
+
+          font-size  : 15px;
+          font-weight: 500;
+          color      : rgb(105, 105, 156);
+          margin     : 12px 0 5px 0;
+        }
+
+        .number {
+
+          font-size  : 20px;
+          font-weight: 600;
+          color      : #33334f;
+          margin     : 10px 0 5px 0;
+          font-family: "Inter", system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .changePer {
+
+          font-size    : 8px;
+          font-weight  : 600;
+          font-family  : "Inter", system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+          display      : flex;
+          align-items  : center;
+          padding      : 0 4px 0 2px;
+          border-radius: 4px;
+        }
+      }
+    }
+
+
+  }
+}
+
+&::-webkit-scrollbar {
+  width      : 0;
+  /* Remove scrollbar space */
+  background : transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+
+.table .tbody .tr .td:nth-of-type(0) {
+  background-color: red;
+  padding         : 0 20px 0 20px !important;
+}
+
+
+.loading {
+  animation: spin 2s infinite;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

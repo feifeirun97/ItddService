@@ -1,0 +1,37 @@
+.ChartAndTableUnit {
+  background-color: #fff;
+  border-radius   : 10px;
+  padding         : 16px 16px 0px 16px;
+  margin-bottom   : 0.6vw;
+  margin-left     : 13rem;
+
+  :global(.ant-table-thead) {
+
+    //global下只能获取一层，不能使用类名，只能选标签
+    th {
+      user-select: none;
+    }
+  }
+}
+
+&::-webkit-scrollbar {
+  width      : 0;
+  /* Remove scrollbar space */
+  background : transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+.customTooltip {
+  :global(.ant-tooltip-inner) {
+    min-width          : fit-content !important;
+    // width           : 330px !important;
+    font-size          : 10px;
+    font-style         : italic;
+    font-weight        : 550;
+    color              : #7171A6;
+    background-color   : #fff;
+    box-shadow         : -1px 2px 8px 1px rgba(128, 128, 128, 0.31) !important;
+    border-radius      : 8px;
+    padding            : 0.5rem;
+  }
+}

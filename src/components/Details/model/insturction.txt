@@ -1,0 +1,24 @@
+ReadMe
+
+//Charts: all charts components
+  *API documentation : https://dhawysl2i3.feishu.cn/docs/doccnIRbAkzmpT23S6zOJ05T7Lf
+
+//CompareModel: Compare Dates Component
+  *only for bar_line chart & month xais
+  *API: null
+
+//SideMenu
+  *multi-level Menu
+  *API: get_catlog
+
+//Table: all table components
+  *API documentation : https://dhawysl2i3.feishu.cn/docs/doccnIRbAkzmpT23S6zOJ05T7Lf
+
+//ToolBars: Graph & Table ToolBar
+  *Graph ToolBar used to switch dimension and redirect to the CompareModel
+  *Table ToolBar used to switch monetary unit ['amt' type]
+  *API: get_doc
+
+//Trend Summary: Summary Card
+  *only for bar_line chart & month xais
+  *API: null
