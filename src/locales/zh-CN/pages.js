@@ -23,6 +23,7 @@ export default {
   'pages.login.loginWith': '其他登录方式 :',
   'pages.login.registerAccount': '注册账户',
   'pages.login.landing': '欢迎登陆',
+  'pages.logout.success': '退出登陆',
   'pages.welcome.advancedComponent': '高级表格',
   'pages.welcome.link': '欢迎使用',
   'pages.welcome.advancedLayout': '高级布局',
@@ -65,4 +66,14 @@ export default {
   'pages.searchTable.tenThousand': '万',
   'pages.searchTable.batchDeletion': '批量删除',
   'pages.searchTable.batchApproval': '批量审批',
+  'pages.projList.title': '项目列表',
+  'pages.projList.newProj': '新增项目',
+  'pages.projList.version': '版本控制',
+  'pages.projList.choose': '选择',
+  'pages.projList.enterpriseInfo': '企业信息',
+  'pages.projList.TIN': '纳税人识别号',
+  'pages.projList.enterpriseShortName': '企业简称/曾用名(多曾用名请用,隔开)',
+  'pages.projList.enterpriseFullName': '企业全称',
 };
+
+

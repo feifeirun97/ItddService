@@ -11,7 +11,7 @@ const Settings = {
 
   "siderWidth":500,
   // title:'metrics',
-  logo:'http://api.opm.dev.aitaigroup.com/InvestManagement/framework/static/maxval_highres.7018e226.png',
+  // logo:'http://api.opm.dev.aitaigroup.com/InvestManagement/framework/static/maxval_highres.7018e226.png',
 }
 export default Settings;
 

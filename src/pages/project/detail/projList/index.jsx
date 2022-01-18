@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 
-import NewModel from '@/components/Details/model'
+import ProjList from '@/components/Details/projList'
 import styles from '../style.less'
 
 function index() {
 
   return (
-    <div className={styles.metrics}>
-      <NewModel/>
+    <div className={styles.projList}>
+      <ProjList />
     </div>
-    
+
   )
 }
 

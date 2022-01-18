@@ -11,6 +11,11 @@ export default [
             path: '/user/login',
             component: './user/Login',
           },
+          {
+            name: 'projList',
+            path: '/user/projList',
+            component: './project/detail/projList/index.jsx',
+          },
         ],
       },
       {
@@ -52,7 +57,7 @@ export default [
   },
   {
     path: '/',
-    redirect: '/project',
+    redirect: '/user/projList',
   },
   {
     component: './404',

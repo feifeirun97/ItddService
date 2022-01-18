@@ -1,32 +1,34 @@
 import React, { useCallback } from 'react';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
-import { Avatar, Menu, Spin } from 'antd';
+import { Avatar, Menu, Spin, message } from 'antd';
 import { history, useModel } from 'umi';
 import { stringify } from 'querystring';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';
 import { outLogin } from '@/services/ant-design-pro/api';
-
-/**
- * 退出登录，并且将当前的 url 保存
- */
-const loginOut = async () => {
-  await outLogin();
-  const { query = {}, pathname } = history.location;
-  const { redirect } = query; // Note: There may be security issues, please note
-
-  if (window.location.pathname !== '/user/login' && !redirect) {
-    history.replace({
-      pathname: '/user/login',
-      search: stringify({
-        redirect: pathname,
-      }),
-    });
-  }
-};
+import { useIntl } from 'umi';
+import cookies from "react-cookies";
+import config from "../../../config/appConfig"
 
 const AvatarDropdown = ({ menu }) => {
+  const intl = useIntl();
   const { initialState, setInitialState } = useModel('@@initialState');
+
+  /**
+ * 退出登录，并且将当前的 url 保存
+ */
+  const loginOut = () => {
+    cookies.remove(config.appId + "_" + "token",);
+    cookies.remove(config.appId + "_" + "userId",);
+    cookies.remove(config.appId + "_" + "account",);
+    history.replace({
+      pathname: '/user/login',
+    });
+    message.success(intl.formatMessage({ id: 'pages.logout.success', defaultMessage: '登录成功！', }));
+  };
+
+
+
   const onMenuClick = useCallback(
     (event) => {
       const { key } = event;
@@ -65,7 +67,7 @@ const AvatarDropdown = ({ menu }) => {
 
   const menuHeaderDropdown = (
     <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
-      {menu && (
+      {/* {menu && (
         <Menu.Item key="center">
           <UserOutlined />
           个人中心
@@ -76,12 +78,12 @@ const AvatarDropdown = ({ menu }) => {
           <SettingOutlined />
           个人设置
         </Menu.Item>
-      )}
-      {menu && <Menu.Divider />}
+      )} */}
+      {/* {menu && <Menu.Divider />} */}
 
       <Menu.Item key="logout">
         <LogoutOutlined />
-        退出登录
+        {intl.formatMessage({ id: 'pages.logout.success' })}
       </Menu.Item>
     </Menu>
   );

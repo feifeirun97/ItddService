@@ -51,4 +51,5 @@ export default {
   'menu.editor.koni': '拓扑编辑器',
   'menu.metrics': 'Metrics',
   'menu.fraud': '风险挖掘',
+  'menu.projList': '项目列表'
 };

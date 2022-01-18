@@ -51,4 +51,5 @@ export default {
   'menu.editor.koni': 'Koni Editor',
   'menu.metrics': 'Investment metrics',
   'menu.fraud': 'Investment fraud',
+  'menu.projList': 'Projects'
 };

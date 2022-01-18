@@ -1,11 +1,15 @@
 import FraudModel from '@/components/Details/fraud'
 import React, { useEffect, useState } from 'react'
+import styles from '../style.less'
 
 
 
 function index() {
   return (
-    <FraudModel />
+    <div className={styles.fraud}>
+      <FraudModel />
+    </div>
+    
   )
 }
 

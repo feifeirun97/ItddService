@@ -6,6 +6,8 @@ import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
 import { BookOutlined, LinkOutlined } from '@ant-design/icons';
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
+import config from "../config/appConfig"
+import cookies from "react-cookies";
 /** 获取用户信息比较慢的时候会展示一个 loading */
 
 export const initialStateConfig = {
@@ -18,31 +20,22 @@ export const initialStateConfig = {
 export async function getInitialState() {
   const fetchUserInfo = async () => {
     try {
+      if (cookies.load(config.appId + "_token") === undefined) {
+        throw 'login'
+      }
       const msg = {
         success:true,
         data:{
-          "name": "Serati Ma",
+          "name": cookies.load(config.appId + "_account"),
           "avatar": "https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png",
-          "userid": "00000001",
-          "email": "antdesign@alipay.com",
-          "signature": "海纳百川，有容乃大",
-          "title": "交互专家",
-          "group": "蚂蚁金服－某某某事业群－某某平台部－某某技术部－UED",
-          "tags": [],
-          "notifyCount": 12,
-          "unreadCount": 11,
+          "userid":cookies.load(config.appId + "_userId"),
           "country": "China",
           "access": "user",
-          "geographic": {},
-          "address": "",
-          "phone": ""
         }
       }
       return msg.data;
       
     } catch (error) {
-      console.log(error)
-      console.log('yes3')
       history.push(loginPath);
     }
 
@@ -50,7 +43,6 @@ export async function getInitialState() {
   }; // 如果是登录页面，不执行
 
   if (history.location.pathname !== loginPath) {
-    console.log('yes2')
     const currentUser = await fetchUserInfo();
     return {
       fetchUserInfo,

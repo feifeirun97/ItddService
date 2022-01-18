@@ -1,0 +1,61 @@
+.logo {
+  width      : 160px;
+  display    : block;
+  margin     : 0 auto;
+  padding-top: 100px;
+}
+
+.lang {
+  width      : 100%;
+  height     : 40px;
+  position   : absolute;
+  top        : 10px;
+  line-height: 44px;
+  text-align : right;
+
+  :global(.ant-dropdown-trigger) {
+    margin-right: 24px;
+  }
+}
+
+.projList {
+  margin: 30px auto;
+
+  background     : #fff;
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+  width          : 70%;
+  min-width      : 900px;
+  max-width      : 1400px;
+  height         : fit-content;
+  border-radius  : 20px;
+  box-shadow     : 0px 3px 10px rgba(53, 69, 99, 0.15) !important;
+  padding        : 10px 20px 0px 20px;
+
+
+  .toolbar {
+    display        : flex;
+    width          : 100%;
+    height         : 10%;
+    justify-content: space-between;
+    align-items    : center;
+
+    .projModal {
+      margin-top: 150px;
+    }
+  }
+
+  .ProjTable {
+    width: 100%;
+
+    .versionModal {
+      margin-top: 150px;
+
+      .versionTable {
+        width: 100%;
+      }
+    }
+  }
+}

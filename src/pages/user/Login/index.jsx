@@ -86,7 +86,9 @@ const Login = () => {
     if (msg.status === '0000') {
       const defaultLoginSuccessMessage = intl.formatMessage({ id: 'pages.login.success', defaultMessage: '登录成功！', });
       message.success(defaultLoginSuccessMessage);
-      cookies.save(config.appId + "_" + "token", response.data.token, '/');
+      cookies.save(config.appId + "_" + "token", response.data.token,);
+      cookies.save(config.appId + "_" + "userId", response.data.userId, );
+      cookies.save(config.appId + "_" + "account", response.data.account, );
 
       await fetchUserInfo();
       /** 此方法会跳转到 redirect 参数所在的位置 */
@@ -94,7 +96,8 @@ const Login = () => {
       if (!history) return;
       const { query } = history.location;
       const { redirect } = query;
-      history.push('/project');
+      history.push('/user/projList');
+
       return;
     }
     else {

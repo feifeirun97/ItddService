@@ -13,6 +13,7 @@ body,
 .ant-layout {
   min-height: 100vh;
 }
+
 .ant-pro-sider.ant-layout-sider.ant-pro-sider-fixed {
   left: unset;
 }
@@ -22,8 +23,8 @@ canvas {
 }
 
 body {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+  text-rendering         : optimizeLegibility;
+  -webkit-font-smoothing : antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -34,14 +35,17 @@ ol {
 
 @media (max-width: @screen-xs) {
   .ant-table {
-    width: 100%;
+    width     : 100%;
     overflow-x: auto;
-    &-thead > tr,
-    &-tbody > tr {
-      > th,
-      > td {
+
+    &-thead>tr,
+    &-tbody>tr {
+
+      >th,
+      >td {
         white-space: pre;
-        > span {
+
+        >span {
           display: block;
         }
       }
@@ -50,13 +54,38 @@ ol {
 }
 
 // Compatible with IE11
-@media screen and(-ms-high-contrast: active), (-ms-high-contrast: none) {
-  body .ant-design-pro > .ant-layout {
+@media screen and(-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+  body .ant-design-pro>.ant-layout {
     min-height: 100vh;
   }
 }
 
-
-:global(.ant-layout-sider) {
+//强制修改侧边栏样式，没找到sider文件在哪
+.ant-pro-sider-logo {
+  height         : 45px;
+  display        : flex;
+  justify-content: center;
+}
+.ant-layout-sider {
   min-width: 80px !important;
+}
+
+.ant-pro-sider-links {
+  display: none;
+}
+
+.ant-pro-global-header-collapsed-button {
+  display: none;
+}
+
+
+.ant-menu-item-only-child{
+  // background-color: red;
+  height: 80px !important;
+  display: flex;
+  align-items: center;
+ 
+  margin-left: 0px !important;
+  
 }
