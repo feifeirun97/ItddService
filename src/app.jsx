@@ -23,6 +23,8 @@ export async function getInitialState() {
       if (cookies.load(config.appId + "_token") === undefined) {
         throw 'login'
       }
+      
+
       const msg = {
         success:true,
         data:{
@@ -33,9 +35,12 @@ export async function getInitialState() {
           "access": "user",
         }
       }
+
       return msg.data;
+
       
     } catch (error) {
+      console.log(error)
       history.push(loginPath);
     }
 

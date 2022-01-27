@@ -2,12 +2,13 @@
 import React, { useEffect, useState } from 'react'
 import styles from '../style.less'
 import { Button } from 'antd';
-import ProjModal from '../Modal/ProjModal';
+
 import { useIntl } from 'umi';
+import ProjModal from '../Modal/ProjModal';
 
 export default function Toolbar() {
-  const [projInfoOpen, setProjInfoOpen] = useState(false)
   const intl = useIntl();
+  const [projInfoOpen, setProjInfoOpen] = useState(false)
   // const handleProjClick = ()=>{
 
   // }
@@ -17,12 +18,12 @@ export default function Toolbar() {
         <h1>
           {intl.formatMessage({ id: 'pages.projList.title' })}
         </h1>
-        <Button type='primary' onClick={() => setProjInfoOpen(true)}>
+        <Button type='primary' onClick={()=>setProjInfoOpen(true)}>
           {intl.formatMessage({ id: 'pages.projList.newProj' })}
         </Button>
       </div>
-
-      <ProjModal projInfoOpen={projInfoOpen} projOnchange={() => setProjInfoOpen(false)} />
+      <ProjModal projInfoOpen={projInfoOpen} projOnchange={()=>setProjInfoOpen(false)} />
+    
     </>
 
   )

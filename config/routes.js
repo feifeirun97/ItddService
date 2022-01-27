@@ -7,6 +7,10 @@ export default [
         path: '/user',
         routes: [
           {
+            path: '/',
+            redirect: '/user/projList',
+          },
+          {
             name: 'login',
             path: '/user/login',
             component: './user/Login',

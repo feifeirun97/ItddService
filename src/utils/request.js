@@ -74,7 +74,7 @@ axios.interceptors.response.use(
     } else {
       if (response.data.respCode) {
         if (response.data.respCode == "0004") {
-          window.top.location.href = `${config.rootPath}#/login`;
+          window.top.location.href = `/user/login`;
           return;
         }
         if (
@@ -101,23 +101,7 @@ axios.interceptors.response.use(
   }
 );
 
-// 处理参数, 去掉 function 类型的参数
-const hanleParams = (params) => {
-  const paramsType = objType(params);
-  switch (paramsType) {
-    case "object":
-      Object.keys(params).forEach((item) => {
-        const value = params[item];
-        const valueType = objType(value);
-        if (valueType === "function") {
-          params[item] = undefined;
-        }
-        return item;
-      });
-      break;
-  }
-  return params;
-};
+
 
 const request = function (url, option) {
   message.loading(null, 0);

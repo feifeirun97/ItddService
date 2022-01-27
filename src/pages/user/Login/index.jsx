@@ -8,7 +8,7 @@ import {
   MailTwoTone
 } from '@ant-design/icons';
 import { Alert, message, Tabs, Button } from 'antd';
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import { ProFormCaptcha, ProFormCheckbox, ProFormText, LoginForm } from '@ant-design/pro-form';
 import { useIntl, history, FormattedMessage, SelectLang, useModel } from 'umi';
 import Footer from '@/components/Footer';
@@ -40,6 +40,17 @@ const Login = () => {
   const [uuid, setUuid] = useState(new Date().valueOf());
   const { initialState, setInitialState } = useModel('@@initialState');
   const intl = useIntl();
+  
+  useEffect(() => {
+    if (window.top.location.pathname==='/user/login') {
+      console.log('yes')
+      cookies.remove(config.appId + "_" + "token",);
+      cookies.remove(config.appId + "_" + "userId",);
+      cookies.remove(config.appId + "_" + "account",);
+    }
+  }, [uuid]);
+  
+
 
   const fetchUserInfo = async () => {
     const userInfo = {
@@ -87,8 +98,8 @@ const Login = () => {
       const defaultLoginSuccessMessage = intl.formatMessage({ id: 'pages.login.success', defaultMessage: '登录成功！', });
       message.success(defaultLoginSuccessMessage);
       cookies.save(config.appId + "_" + "token", response.data.token,);
-      cookies.save(config.appId + "_" + "userId", response.data.userId, );
-      cookies.save(config.appId + "_" + "account", response.data.account, );
+      cookies.save(config.appId + "_" + "userId", response.data.userId,);
+      cookies.save(config.appId + "_" + "account", response.data.account,);
 
       await fetchUserInfo();
       /** 此方法会跳转到 redirect 参数所在的位置 */
